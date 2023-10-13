@@ -12,5 +12,5 @@ const runSchema = new Schema({
 }, { timestamps: true }
 )
 
-const Driver = mongoose.model('Driver', driverSchema)
-module.exports = Driver
+const Run = mongoose.model('Run', runSchema)
+module.exports = Run

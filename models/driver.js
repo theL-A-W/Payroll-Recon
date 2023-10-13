@@ -16,4 +16,3 @@ const Driver = mongoose.model('Driver', driverSchema)
 module.exports = Driver
 
 
-// { type: Schema.Types.ObjectId, ref: 'driver_id'}
