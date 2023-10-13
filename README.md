@@ -16,6 +16,15 @@ This is a payroll reconcilliation app for a small ground transportation company.
 - MongoDB
 
 ## Getting Started
+# [Wireframe](https://lucid.app/lucidspark/070ef9ad-701f-4db5-89d7-fc0df257b6d8/edit?beaconFlowId=4B9155E629D46088&invitationId=inv_409acb19-f726-4e44-8ce9-c1ccdf1563f9&page=0_0#)
+
+## Stretch Goals
+- Messaging functionality upon login
+- Login Functionality
+- Log weekly pay history
+- Ability to search through history by week-ending date
+- Dispcrepancy page
+- Ability of users to upload images
 
 ## Next Steps
 - Integrating with the reservation booking site to pull reservation information automatically.
