@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Payroll Application</title>
+    <link rel="stylesheet" href="inputPay.css">
+    <script src="inputPay.js" defer></script>
+    <title> Input Payroll</title>
+    
 </head>
 <body>
     <nav>
         <ul class="topnav">
+            <a href="http://127.0.0.1:5500/Payroll-Application/client/index.html">
+                <button id="home"><i class="fas fa-home fa-2x" style="color: whitesmoke;"></i></button>
+                </a>
             <button class="navitm">Policy</button>
             <button class="navitm">Discrepancy</button>
             <button class="navitm">History</button>
@@ -24,24 +28,27 @@
     </nav>
     <h1 class="title">Cayman Payroll</h1>
     <h2 class="subtitle">Secured by L-A-W</h2>
-    <div class="messagingContainer">
-        <div id="textWindow">Text Window</div>
+    <div class="main">
+
+
+
+
         <div><img id="profilePhoto" src="https://media.licdn.com/dms/image/D4E03AQEl-rXGvB5XcA/profile-displayphoto-shrink_100_100/0/1697158987869?e=1702512000&v=beta&t=K3im-JQ_UCFATqN3miAd3qZ8WgdjBd0Fj6JrHU6-7jM"></div>
-        <div class="inputDiv">
-            <input id="messageInput" placeholder="Type any messages, questions, and notes about payroll here... "><button id="sendBtn"><i class="fas fa-location-arrow fa-lg" style="color: #445f8d;"></i></button></input>
+
+        <div class="lastWeek">
+            <div class="pay" id="sunPay">Sunday: $200.00</div>
+            <div class="pay" id="monPay">Monday: $200.00</div>
+            <div class="pay" id="tuesPay">Tuesday: $200.00</div>
+            <div class="pay" id="wedsPay">Wednesday: $200.00</div>
+            <div class="pay" id="thursPay">Thursday $200.00</div>
+            <div class="pay" id="friPay">Friday: $200.00</div>
+            <div class="pay" id="satPay">Saturday: $200.00</div>
+            <div id="pastTotals">Last Week's Total: <br id="dollars"> $1000.00</br> </div>
         </div>
-        
     </div>
-    <div class="lastWeek">
-        <div class="pay" id="sunPay">Sunday: $200.00</div>
-        <div class="pay" id="monPay">Monday: $200.00</div>
-        <div class="pay" id="tuesPay">Tuesday: $200.00</div>
-        <div class="pay" id="wedsPay">Wednesday: $200.00</div>
-        <div class="pay" id="thursPay">Thursday $200.00</div>
-        <div class="pay" id="friPay">Friday: $200.00</div>
-        <div class="pay" id="satPay">Saturday: $200.00</div>
-        <div id="pastWeeksTotal">Last Week's Total: <br id="dollars"> $1000.00</br> </div>
-    </div>
+
+
+
     
 </body>
 </html>
