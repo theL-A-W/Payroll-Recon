@@ -3,10 +3,10 @@ What it does...
 
 
 ## Wireframe
-# [View wireframe] (./images/Payroll-Project-Wireframe.png)
+![View wireframe](./images/Payroll-Project-Wireframe.png)
 
 ## ERD
-# [View ERD] (./images/Payroll-Project-ERD.png)
+![View ERD](./images/Payroll-Project-ERD.png)
 
 
 ## Technologies Used
