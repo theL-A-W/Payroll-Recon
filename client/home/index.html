@@ -12,12 +12,18 @@
 <body>
     <nav>
         <ul class="topnav">
-            <button class="navitm">Policy</button>
+            <a href="http://127.0.0.1:5500/Payroll-Application/client/policy/policy.html" >
+                <button class="navitm">Policy</button>
+            </a>
             <button class="navitm">Discrepancy</button>
+        <a href="http://127.0.0.1:5500/Payroll-Application/client/history/history.html" >
             <button class="navitm">History</button>
-        <a href="http://127.0.0.1:5500/Payroll-Application/client/inputPay.html" >
+        </a>
+        
+        <a href="http://127.0.0.1:5500/Payroll-Application/client/inputPay/inputPay.html" >
             <button class="navitm"> Input Payroll</button>
         </a>
+        
             <button 
             class="navitm">Login</button>
         </ul>
@@ -33,13 +39,13 @@
         
     </div>
     <div class="lastWeek">
-        <div class="pay" id="sunPay">Sunday: $200.00</div>
-        <div class="pay" id="monPay">Monday: $200.00</div>
-        <div class="pay" id="tuesPay">Tuesday: $200.00</div>
-        <div class="pay" id="wedsPay">Wednesday: $200.00</div>
-        <div class="pay" id="thursPay">Thursday $200.00</div>
-        <div class="pay" id="friPay">Friday: $200.00</div>
-        <div class="pay" id="satPay">Saturday: $200.00</div>
+        <div class="pay" id="sunPay">Sunday: <p id="amount">$200.00</p></div>
+        <div class="pay" id="monPay">Monday: <p id="amount">$200.00</p></div>
+        <div class="pay" id="tuesPay">Tuesday: <p id="amount">$200.00</p></div>
+        <div class="pay" id="wedsPay">Wednesday: <p id="amount">$200.00</p></div>
+        <div class="pay" id="thursPay">Thursday <p id="amount">$200.00</p></div>
+        <div class="pay" id="friPay">Friday: <p id="amount">$200.00</p></div>
+        <div class="pay" id="satPay">Saturday: <p id="amount">$200.00</p></div>
         <div id="pastWeeksTotal">Last Week's Total: <br id="dollars"> $1000.00</br> </div>
     </div>
     

@@ -97,6 +97,12 @@
     width: 60%;
     word-spacing: 34em;
     padding: 4px;
+
+}
+#amount{
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
 }
 #pastWeeksTotal{
     height: 7em;
@@ -105,6 +111,10 @@
     border-radius: 50%;
     text-align: center;
     border: 5px solid whitesmoke;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     float: right;
     right: 3%;
@@ -112,3 +122,4 @@
     padding: 2%;
     word-wrap: normal;
 }
+
