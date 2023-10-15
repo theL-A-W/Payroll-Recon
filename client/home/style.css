@@ -44,12 +44,11 @@ body{
 
 .close-modal{
     color: #62482A;
-    position: relative;
-    top: 0;
-    left: 22em;
     font-size: 30px;
     margin: .5em;
-    width: 30px;
+
+    margin-left: 19em;
+
 }
 .close-modal:active{
     color: #342514;
@@ -137,9 +136,7 @@ body{
     box-shadow: 1px 1px 10px 3px #79634B;
 
 }
-#person1{
 
-}
 #person2{
     margin-top: 3em;
 }

@@ -41,31 +41,39 @@
 
 
 
-        <div id="behindHeader"><img id="profilePhoto" src="https://media.licdn.com/dms/image/D4E03AQEl-rXGvB5XcA/profile-displayphoto-shrink_100_100/0/1697158987869?e=1702512000&v=beta&t=K3im-JQ_UCFATqN3miAd3qZ8WgdjBd0Fj6JrHU6-7jM">
+        <div id="behindHeader"><img id="profilePhoto" src="https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg=">
         <h2 class="header">Input Payroll</h2>
         </div>
 
-        <div class="lastWeek">
+        <div class="oneWeek">
 
-            <div class="pay">Base-Fare: 
+            <div class="pay" id="base-fare">Base-Fare: 
                 <input class="input" id="bfInput" placeholder="$0.00"></input>
             </div>
-            <div class="pay">Surcharge: 
+            <div class="pay" id="surcharge">Surcharge: 
                 <input class="input" id="surchargeInput" placeholder="$0.00"></input>
             </div>
-            <div class="pay">Bags/ExtraStops: 
+            <div class="pay" id="bags">Bags/ExtraStops: 
                 <input class="input" id="bagsInput" placeholder="$0.00"></input>
             </div>
-            <div class="pay">Gratuity: 
+            <div class="pay" id="gratuity">Gratuity: 
                 <input class="input" id="gratuityInput" placeholder="$0.00"></input>
             </div>
-            <div class="pay">Waiting: 
+            <div class="pay" id="waiting">Waiting: 
                 <input class="input" id="waitingInput" placeholder="$0.00"></input>
             </div>
-            <div class="pay">Other(please-specify): 
+            <div class="pay" id="other">Other(please-specify): 
                 <input class="input" id="otherInput" placeholder="$0.00"></input>
             </div>
-            <div id="dayTotal">Last Week's Total: <br id="dollars"> $1000.00</br> </div>
+            <div id="runTotal">Total Due Driver: <br id="dollars"> $1000.00</br> </div>
+            <button id="submit-btn">Submit</button>
+        </div>
+        <div class="recentSubmits">
+            <div class="runs" id="run1">Run1<button id="edit">Edit</button></div>
+            <div class="runs" id="run2">Run2<button id="edit">Edit</button></div>
+            <div class="runs" id="run3">Run3<button id="edit">Edit</button></div>
+            <div class="runs" id="run4">Run4<button id="edit">Edit</button></div>
+            <div class="runs" id="run5">Run5<button id="edit">Edit</button></div>
         </div>
     </div>
 
