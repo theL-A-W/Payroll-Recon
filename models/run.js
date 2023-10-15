@@ -7,7 +7,7 @@ const runSchema = new Schema({
     surcharge: { type: Number, required: true },
     bags: { type: Number, required: true },
     gratuity: { type: Number, required: true },
-    waiting: { type: Nuymber, required: true },
+    waiting: { type: Number, required: true },
     other: { type: Number, required: true}
 }, { timestamps: true }
 )

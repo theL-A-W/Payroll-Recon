@@ -1,9 +1,7 @@
 const mongoose = require('mongoose')
-const { Schema } = mongoose
 
-const driverSchema = new Schema({
+const driverSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    emp_id: { type: Schema.Types.ObjectId, ref: 'emp_id', primaryKey: true },
     availability: { type: String, required: true },
     emp_email: { type: String, required: true },
     emp_pass: { type: String, required: true },

@@ -1,24 +1,101 @@
-
+body{
+    background-color: #EEDFCF;
+    color: #79634B;
+}
 .topnav{
     display: flex;
     columns: auto;
     justify-content: space-around;
     list-style: none;
-    background-color: grey;
+    background-color: #79634B;
+    color: #79634B;
     padding: 1em;
-    border: transparent;
+    border: 4px solid #62482A;
     border-radius: 5px;
 }
 .navitm{
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     padding: .5em 1em;
     border: transparent;
     border-radius: 5px;
 }
+.navitm:active{
+    transform: translateX(-1px);
+    transform: translateY(1px);
+    box-shadow: inset 2px 2px 2px 2px #79634B;
+    background-color: #EEDFCF;
+}
+.modal{
+    background-color: #EEDFCF;
+    height: 30em;
+    margin: 10% 20%;
+    border: 6px solid #62482A;
+}
+.hidden{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #342514ba;
+    z-index: 999;
+}
+
+.close-modal{
+    color: #62482A;
+    position: relative;
+    top: 0;
+    left: 22em;
+    font-size: 30px;
+    margin: .5em;
+    width: 30px;
+}
+.close-modal:active{
+    color: #342514;
+}
+.login-input{
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    margin: 15% 20%;
+    max-width: 15em;
+    font-size: 25px;
+    
+}
+#username, #password{
+    font-size: .8em;
+    padding: 7px;
+    border: 2px solid #342514;
+    box-shadow:inset 1px 1px 1px 1px #79634B;
+    background-color: #EEDFCF;
+}
+#enter{
+    margin-top: 6px;
+    width: 10em;
+    display: flex;
+    justify-self: center;
+    padding: 4px 3.75em;
+    background-color: #79634B;
+    border-radius: 5px;
+    color: #EEDFCF;
+    
+}
+#enter:active{
+    transform: translateX(-1px);
+    transform: translateY(1px);
+    box-shadow: inset 2px 2px 2px 2px #79634B;
+    background-color: #EEDFCF;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: #62482A;
+}
+
+
 .title{
     text-align: center;
     font-size: 22px;
-    color: rgb(99, 97, 97);
+    color: #79634B;
     letter-spacing: 4px;
     word-spacing: 12px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -27,43 +104,72 @@
     text-align: center;
     font-size: 11px;
     color: rgb(99, 97, 97);
+    color: #79634B;
 }
 .messagingContainer{
     padding: 2em;
-    background-color: gray;
+    background-color: #79634B;
     border: transparent;
     border-radius: 5px;
+    border: 4px solid #62482A;
 }
 #textWindow{
-    padding: 9em;
+    min-width: 18em;
+    min-height: 18em;
     margin: 0px 0px 1em 0px;
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     border: transparent;
     border-radius: 5px;
+    border: 4px solid #62482A;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+.msg{
+    background-color: whitesmoke;
+    width: 18em;
+    margin: 1em;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    text-align: center;
+    height: fit-content;
+    padding: .5em;
+    box-shadow: 1px 1px 10px 3px #79634B;
+
+}
+#person1{
+
+}
+#person2{
+    margin-top: 3em;
 }
 #profilePhoto{
     height: 7em;
     width: 7em;
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     border-radius: 50%;
-    border: 5px solid whitesmoke;
+    border: 5px solid #62482A;
 }
 .inputDiv{
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     position: relative;
     float: right;
     bottom: 6em;
     width: 80%;
-    border: transparent;
+    border: 4px solid #62482A;
     border-radius: 5px;
+    box-shadow: inset 4px 4px 10px 3px #79634B;
 }
 #messageInput{
-    background-color: whitesmoke;
+    background-color: transparent;
     border: transparent;
     border-radius: 5px;
-    padding: 2em 1em;
+    min-height: 2em;
+    min-width: 20em;
     width: 80%;
     color: black;
+    color: #79634B;
+    font-size: 20px;
 }
 #sendBtn{
     display: flex;
@@ -80,45 +186,49 @@
     width: 40px;
 }
 #sendBtn:active{
-    box-shadow: 2px 2px 10px grey;
+    box-shadow: 2px 2px 10px #79634B;
 }
-.lastWeek{
+
+#payDiv{
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #79634B;
+    width: 100%;
     padding: 1em;
-    background-color: gray;
-    margin-top: 1em;
-    border: transparent;
+    margin: .5em 0px;
+    border: 4px solid #62482A;
     border-radius: 5px;
+
 }
 .pay{
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     border: transparent;
     border-radius: 5px;
     margin-top: 4px;
-    width: 60%;
     word-spacing: 34em;
     padding: 4px;
+    display: flex;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
 
 }
 #amount{
     display: flex;
     justify-content: flex-end;
     margin: auto;
+    width: 60%;
 }
 #pastWeeksTotal{
-    height: 7em;
-    width: 7em;
-    background-color: whitesmoke;
+    height: 12em;
+    width: 12em;
+    background-color: #EEDFCF;
     border-radius: 50%;
     text-align: center;
-    border: 5px solid whitesmoke;
+    border: 4px solid #62482A;
     margin-left: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    float: right;
-    right: 3%;
-    bottom: 10.15em;
     padding: 2%;
     word-wrap: normal;
 }

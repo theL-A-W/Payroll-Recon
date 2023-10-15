@@ -1,19 +1,30 @@
-
+body{
+    background-color: #EEDFCF;
+    color: #62482A;
+}
 .topnav{
+    color: #62482A;
     display: flex;
     columns: auto;
     justify-content: space-around;
     list-style: none;
-    background-color: darkgrey;
+    background-color: #C3AE97;
     padding: 1em;
-    border: 4px solid gray;
+    border: 4px solid #79634B;
     border-radius: 5px;
 }
 .navitm{
-    background-color: whitesmoke;
+    color: #62482A;
+    background-color: #EEDFCF;
     padding: .5em 1em;
     border: transparent;
     border-radius: 5px;
+}
+.navitm:active{
+    transform: translateX(-1px);
+    transform: translateY(1px);
+    box-shadow: inset 2px 2px 2px 2px #79634B;
+    background-color: #EEDFCF;
 }
 #home{
     background-color: transparent;
@@ -26,7 +37,7 @@
 .title{
     text-align: center;
     font-size: 22px;
-    color: rgb(99, 97, 97);
+    color: #62482A;
     letter-spacing: 4px;
     word-spacing: 12px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -34,42 +45,46 @@
 .subtitle{
     text-align: center;
     font-size: 11px;
-    color: rgb(99, 97, 97);
+    color: #79634B;
 }
 .main{
     padding: 2em 1em;
-    background-color: darkgray;
-    border: 4px solid gray;
-    border-radius:  5px;;
+    background-color: #C3AE97;
+    border: 4px solid #79634B;
+    border-radius: 5px;
     }
+#behindHeader{
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-self: left;
+}
 #profilePhoto{
     height: 7em;
     width: 7em;
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     border-radius: 50%;
-    border: 5px solid gray;
+    border: 5px solid #79634B;
 }
 .header{
-    background-color: whitesmoke;
-    border: 4px solid grey;
+    background-color: #EEDFCF;
+    border: 4px solid #79634B;
+    color: #62482A;
     border-radius: 5px;
-    padding: .5em 4em;
-    position: relative;
-    float: right;
-    top: 1.25em;
-    right: 3em;
-    margin: 0px 25%;
+    padding: .5em 6em;
+    margin-right: 2em;
 }
 .lastWeek{
     padding: 1em;
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     margin-top: 1em;
-    border: 4px solid gray;
+    border: 4px solid #79634B;
     border-radius: 5px;
-    box-shadow: 4px 4px 10px gray;
+    box-shadow: 4px 4px 10px #79634B;
+    color: #62482A;
 }
 .pay{
-    background-color: darkgrey;
+    background-color: #C3AE97;
     border: transparent;
     border-radius: 5px;
     margin-top: 4px;
@@ -80,14 +95,18 @@
 .input{
     display: flex;
     margin-left: auto;
+    border-radius: 5px;
+    color: #62482A;
+    border-color: transparent;
+    box-shadow: inset 1px 1px 2px .25px #79634B;
 }
 #dayTotal{
     height: 7em;
     width: 7em;
-    background-color: darkgray;
+    background-color: #C3AE97;
     border-radius: 50%;
     text-align: center;
-    border: 5px solid grey;
+    border: 5px solid #79634B;
     position: relative;
     float: right;
     right: 3%;

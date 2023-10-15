@@ -24,30 +24,56 @@
             <button class="navitm"> Input Payroll</button>
         </a>
         
-            <button 
+            <button id="login-btn"
             class="navitm">Login</button>
         </ul>
     </nav>
     <h1 class="title">Cayman Payroll</h1>
     <h2 class="subtitle">Secured by L-A-W</h2>
     <div class="messagingContainer">
-        <div id="textWindow">Text Window</div>
+        <div id="textWindow">
+            <div class="msg" id="person1">Message1</div>
+            <div class="msg" id="person2">Message2</div>
+            <div  class="msg" id="person1">Message3</div>
+            <div class="msg" id="person2">Message4</div>
+            <div  class="msg" id="person1">Message5</div>
+            <div class="msg" id="person2">Message6</div>
+        </div>
+
+<div class="hidden">
+    
+    <div class="modal">
+        <div class="close-modal">&#10006;</div>
+        <div class="login-input">
+            <h2>Login:</h2>
+            <label>Username:</label>
+            <input type="text" placeholder="email" id="username">
+            <label>Password:</label>
+            <input type="text" placeholder="password" id="password">
+            <button type="button" id="enter">Enter</button>
+        </div>
+    </div>
+</div>
+
+
         <div><img id="profilePhoto" src="https://media.licdn.com/dms/image/D4E03AQEl-rXGvB5XcA/profile-displayphoto-shrink_100_100/0/1697158987869?e=1702512000&v=beta&t=K3im-JQ_UCFATqN3miAd3qZ8WgdjBd0Fj6JrHU6-7jM"></div>
         <div class="inputDiv">
-            <input id="messageInput" placeholder="Type any messages, questions, and notes about payroll here... "><button id="sendBtn"><i class="fas fa-location-arrow fa-lg" style="color: #445f8d;"></i></button></input>
+            <input id="messageInput" placeholder="Type any messages, questions, and notes about payroll here... ">
+            <button id="sendBtn"><i class="fas fa-location-arrow fa-lg" style="color: #79634B;"></i></button></input>
         </div>
         
     </div>
-    <div class="lastWeek">
-        <div class="pay" id="sunPay">Sunday: <p id="amount">$200.00</p></div>
-        <div class="pay" id="monPay">Monday: <p id="amount">$200.00</p></div>
-        <div class="pay" id="tuesPay">Tuesday: <p id="amount">$200.00</p></div>
-        <div class="pay" id="wedsPay">Wednesday: <p id="amount">$200.00</p></div>
-        <div class="pay" id="thursPay">Thursday <p id="amount">$200.00</p></div>
-        <div class="pay" id="friPay">Friday: <p id="amount">$200.00</p></div>
-        <div class="pay" id="satPay">Saturday: <p id="amount">$200.00</p></div>
+    <div id="payDiv">
+        <div class="lastWeek">
+            <div class="pay" id="sunPay">Sunday: <p id="amount">$200.00</p></div>
+            <div class="pay" id="monPay">Monday: <p id="amount">$200.00</p></div>
+            <div class="pay" id="tuesPay">Tuesday: <p id="amount">$200.00</p></div>
+            <div class="pay" id="wedsPay">Wednesday: <p id="amount">$200.00</p></div>
+            <div class="pay" id="thursPay">Thursday <p id="amount">$200.00</p></div>
+            <div class="pay" id="friPay">Friday: <p id="amount">$200.00</p></div>
+            <div class="pay" id="satPay">Saturday: <p id="amount">$200.00</p></div>
+        </div>
         <div id="pastWeeksTotal">Last Week's Total: <br id="dollars"> $1000.00</br> </div>
     </div>
-    
 </body>
 </html>

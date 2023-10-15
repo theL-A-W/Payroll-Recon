@@ -1,19 +1,28 @@
-
+body{
+    background-color: #EEDFCF;
+}
 .topnav{
+    color: #62482A;
     display: flex;
     columns: auto;
     justify-content: space-around;
     list-style: none;
-    background-color: darkgrey;
+    background-color: #C3AE97;
     padding: 1em;
-    border: 4px solid gray;
+    border: 4px solid #79634B;
     border-radius: 5px;
 }
 .navitm{
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     padding: .5em 1em;
     border: transparent;
     border-radius: 5px;
+}
+.navitm:active{
+    transform: translateX(-1px);
+    transform: translateY(1px);
+    box-shadow: inset 2px 2px 2px 2px #79634B;
+    background-color: #EEDFCF;
 }
 #home{
     background-color: transparent;
@@ -38,27 +47,27 @@
 }
 .main{
     padding: 2em 1em;
-    background-color: darkgray;
-    border: 4px solid gray;
+    background-color: #C3AE97;;
+    border: 4px solid #79634B;
     border-radius:  5px;;
     }
 #profilePhoto{
     height: 7em;
     width: 7em;
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     border-radius: 50%;
-    border: 5px solid gray;
+    border: 5px solid #79634B;
 }
 .lastWeek{
     padding: 1em;
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     margin-top: 1em;
-    border: 4px solid gray;
+    border: 4px solid #79634B;
     border-radius: 5px;
-    box-shadow: 4px 4px 10px gray;
+    box-shadow: 4px 4px 10px #79634B;
 }
 .pay{
-    background-color: darkgrey;
+    background-color: #C3AE97;;
     border: transparent;
     border-radius: 5px;
     margin-top: 4px;
@@ -69,10 +78,10 @@
 #pastTotals{
     height: 7em;
     width: 7em;
-    background-color: darkgray;
+    background-color: #C3AE97;;
     border-radius: 50%;
     text-align: center;
-    border: 5px solid grey;
+    border: 5px solid #79634B;
     position: relative;
     float: right;
     right: 3%;
