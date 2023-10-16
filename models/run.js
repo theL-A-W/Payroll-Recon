@@ -11,5 +11,5 @@ const runSchema = new Schema({
 }, { timestamps: true }
 )
 
-const Run = mongoose.model('Run', runSchema)
-module.exports = Run
+
+module.exports = runSchema

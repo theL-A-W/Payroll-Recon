@@ -17,7 +17,7 @@ async function getOneDriver(req, res) {
         if (driver){
             return res.json(driver)
         }
-        res.status(404).send('Driver with specified ID does not exsist')
+        res.status(404).send('Driver with specified ID does not exist')
     }catch(error){
         return res.status(500).send(error.message)
     }

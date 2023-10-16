@@ -101,6 +101,9 @@ body{
     box-shadow: inset 1px 1px 2px .25px #79634B;
     text-align: end;
 }
+#dateInput{
+  width: 11em;
+}
 #runTotal{
     height: 7em;
     width: 7em;

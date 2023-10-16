@@ -62,6 +62,10 @@ const main = async () => {
                 hasDOT: true
             }
         ]
+
+        await Driver.insertMany(drivers)
+        console.log("Created some drivers")
+
         const runs = [
             {
                 baseFare: 150,
@@ -80,6 +84,9 @@ const main = async () => {
                 other: 0
             }
         ]
+        await Run.insertMany(runs)
+        console.log("Created some runs")
+
         const payments = [
             {
                 emp_id: drivers[0]._id, // Associate payment with the first driver
@@ -95,11 +102,12 @@ const main = async () => {
             },
             
         ]
-    
-const insertedDrivers = await Driver.insertMany(drivers)
-const insertedRuns = await Run.insertMany(runs)
-const insertedPayments = await Payment.insertMany(payments)
-}
+            await Payment.insertMany(payments)
+        console.log("Created some Payments")
+
+
+}   
+
 
 
 

@@ -16,6 +16,8 @@ enter.onclick = async() => {
 allDrivers = await getAllDrivers()
     if(username === emp_email && password === emp_password){
         console.log("you are in!")
+    }else {
+        alert("Username and or password are incorrect. Please try again")
     }
 }
 
