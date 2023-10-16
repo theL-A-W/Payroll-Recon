@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose
+const Schema = mongoose.Schema
 
 const paymentSchema = new Schema({
     emp_id: { type: Schema.Types.ObjectId, ref: 'Driver', required: true },
@@ -9,4 +9,6 @@ const paymentSchema = new Schema({
 }, { timestamps: true }
 )
 
-module.exports = mongoose.model('Payment', paymentSchema)
+
+ const Payment = mongoose.model('Payment', paymentSchema)
+ module.exports = Payment

@@ -1,16 +1,21 @@
-
+body{
+    background-color: #EEDFCF;
+    color: #62482A;
+}
 .topnav{
+    color: #62482A;
     display: flex;
     columns: auto;
     justify-content: space-around;
     list-style: none;
-    background-color: darkgrey;
+    background-color: #C3AE97;
     padding: 1em;
-    border: 4px solid gray;
+    border: 4px solid #79634B;
     border-radius: 5px;
 }
 .navitm{
-    background-color: whitesmoke;
+    color: #62482A;
+    background-color: #EEDFCF;
     padding: .5em 1em;
     border: transparent;
     border-radius: 5px;
@@ -32,7 +37,7 @@
 .title{
     text-align: center;
     font-size: 22px;
-    color: rgb(99, 97, 97);
+    color: #62482A;
     letter-spacing: 4px;
     word-spacing: 12px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -40,56 +45,18 @@
 .subtitle{
     text-align: center;
     font-size: 11px;
-    color: rgb(99, 97, 97);
+    color: #62482A;
 }
 .main{
     padding: 2em 1em;
-    background-color: darkgray;
-    border: 4px solid gray;
+    background-color: #C3AE97;
+    border: 4px solid #79634B;
     border-radius:  5px;;
     }
-#profilePhoto{
-    height: 7em;
-    width: 7em;
-    background-color: whitesmoke;
-    border-radius: 50%;
-    border: 5px solid gray;
-}
-.lastWeek{
-    padding: 1em;
-    background-color: whitesmoke;
-    margin-top: 1em;
-    border: 4px solid gray;
-    border-radius: 5px;
-    box-shadow: 4px 4px 10px gray;
-}
-.pay{
-    background-color: darkgrey;
-    border: transparent;
-    border-radius: 5px;
-    margin-top: 4px;
-    width: 60%;
-    word-spacing: 34em;
-    padding: 4px;
-}
-#pastTotals{
-    height: 7em;
-    width: 7em;
-    background-color: darkgray;
-    border-radius: 50%;
-    text-align: center;
-    border: 5px solid grey;
-    position: relative;
-    float: right;
-    right: 3%;
-    bottom: 10.15em;
-    padding: 2%;
-    word-wrap: normal;
-}
 #policies{
-    background-color: whitesmoke;
+    background-color: #EEDFCF;
     padding: 1em;
     border: transparent;
     border-radius: 5px;
-    color: rgb(99, 97, 97);
+    color: #62482A;
 }

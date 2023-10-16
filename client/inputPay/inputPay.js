@@ -1,10 +1,26 @@
-const baseFare = document.getElementById('bfInput')
-const surcharge = document.getElementById('surchargeInput')
-const bags = document.getElementById('bagsInput')
-const gratuity = document.getElementById('gratuityInput')
-const waiting = document.getElementById('waitingInput')
-const other = document.getElementById('otherInput')
+const baseFare = document.getElementById('bfInput').value
+const surcharge = document.getElementById('surchargeInput').value
+const bags = document.getElementById('bagsInput').value
+const gratuity = document.getElementById('gratuityInput').value
+const waiting = document.getElementById('waitingInput').value
+const other = document.getElementById('otherInput').value
 const submitBtn = document.getElementById('submit-btn')
+
+
+
+
+const inputs = document.getElementsByClassName('input');
+
+for (let i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("input", () => {
+        const value = `$ ${i}${i}.${i}${i}`;
+        inputs[i].setAttribute('placeholder', value);
+    });
+}
+
+
+
+
 
 submitBtn.addEventListener("click", () => {
     if(

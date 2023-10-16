@@ -62,13 +62,49 @@ const main = async () => {
                 hasDOT: true
             }
         ]
-
-await Driver.insertMany(drivers)
+        const runs = [
+            {
+                baseFare: 150,
+                surcharge: 20,
+                bags: 10,
+                gratuity: 20,
+                waiting: 0,
+                other: 20
+            },
+            {
+                baseFare: 115,
+                surcharge: 0,
+                bags: 5,
+                gratuity: 30,
+                waiting: 0,
+                other: 0
+            }
+        ]
+        const payments = [
+            {
+                emp_id: drivers[0]._id, // Associate payment with the first driver
+                run_id: runs[0]._id, // Associate payment with the first run
+                totalAmount: 220,
+                reimbursements: 0
+            },
+            {
+                emp_id: drivers[1]._id, // Associate payment with the second driver
+                run_id: runs[1]._id, // Associate payment with the second run
+                totalAmount: 150,
+                reimbursements: 20
+            },
+            
+        ]
+    
+const insertedDrivers = await Driver.insertMany(drivers)
+const insertedRuns = await Run.insertMany(runs)
+const insertedPayments = await Payment.insertMany(payments)
 }
 
 
-const run = async () => {
+
+const runSeed = async () => {
     await main()
     db.close()
 }
-run()
+runSeed()
