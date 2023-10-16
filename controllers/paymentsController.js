@@ -1,31 +1,13 @@
 const { Payment } = require('../models')
 
-const createPayment = async (req, res) => {
-    const { emp_id, run_id, date, totalAmount, reimbursements } = req.body;
-
-    try {
-        const payment = new Payment({
-            emp_id,
-            run_id,
-            totalAmount,
-            reimbursements
-        })
-
-        await payment.save()
-        return res.status(201).json(payment)
-    } catch (error) {
-        return res.status(500).send(error.message)
-    }
-}
-
 const getAllPayments = async (req, res) => {
     try {
         const payments = await Payment.find().populate('emp_id run_id')
         return res.json(payments)
     } catch (error) {
-        return res.status(500).send(error.message);
+        return res.status(500).send(error.message)
     }
-};
+}
 
 const getOnePayment = async (req, res) => {
     try {
@@ -40,8 +22,51 @@ const getOnePayment = async (req, res) => {
     }
 }
 
+
+
+const createPayments = async (req, res) => {
+        try {
+            const payment = await new Payment(req.body)
+            await payment.save()
+            return res.status(201).json({
+                payment
+            });
+        } catch (error) {
+            return res.status(500).json({ error: error.message })
+        }
+    }
+    
+    const updatePayments = async (req, res) => {
+        try {
+            let { id } = req.params;
+            let payment = await Payment.findByIdAndUpdate(id, req.body, { new: true })
+            if (payment) {
+                return res.status(200).json(payment)
+            }
+            throw new Error("Payment not found")
+        } catch (error) {
+            return res.status(500).send(error.message);
+        }
+    }
+    
+    const deletePayments = async (req, res) => {
+        try {
+            const { id } = req.params;
+            const deleted = await Payment.findByIdAndDelete(id)
+            if (deleted) {
+                return res.status(200).send("Payment deleted");
+            }
+            throw new Error("Payment not found");
+        } catch (error) {
+            return res.status(500).send(error.message);
+        }
+    }
+
+
 module.exports = {
-    createPayment,
     getAllPayments,
-    getOnePayment
+    getOnePayment,
+    createPayments,
+    updatePayments,
+    deletePayments
 }

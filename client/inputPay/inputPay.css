@@ -104,19 +104,47 @@ body{
 #dateInput{
   width: 11em;
 }
-#runTotal{
-    height: 7em;
-    width: 7em;
+#run-total{
+    height: 17em;
+    width: 17em;
     background-color: #C3AE97;
     border-radius: 50%;
+    font-weight: 800;
+    font-size: 20px;
     text-align: center;
     border: 5px solid #79634B;
+    color: #62482A;
     position: relative;
     float: right;
     right: 3%;
-    bottom: 10.15em;
+    bottom: 18.35em;
     padding: 2%;
     word-wrap: normal;
+    line-height: 22px;
+}
+.allText{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#runNumber{
+    text-decoration: underline  #62482A;
+    font-family: fantasy;
+    font-size: 25px;
+    font-weight: 900;
+    margin: 0;
+}
+#category{
+    font-size: 20px;
+    margin: 0;
+
+    text-decoration: underline;
+}
+#description{
+    margin:0;
+    font-size: 22px;
+
+    font-weight: 500;
+
 }
 #submit-btn{
     background-color: #C3AE97;
@@ -140,17 +168,21 @@ body{
     border: transparent;
     border-radius: 5px;
     margin-top: 4px;
-    width: 60%;
-    word-spacing: 34em;
+    width: 66.5%;
     padding: 4px;
 
 }
-#edit{
-    background-color: #C3AE97;
+#edit, #delete{
+    background-color: #79634B;
     border: 4px solid #79634B;
+    margin: 2px;
     border-radius: 5px;
     padding: .3em;
-    position: relative;
-    left: 36.95em;
-    top: 0;
+    margin-left: 49em;
+
+    height: 3em;
+    width: 3em;
+}
+#delete{
+    margin-left: 1em;
 }

@@ -73,7 +73,8 @@ const main = async () => {
                 bags: 10,
                 gratuity: 20,
                 waiting: 0,
-                other: 20
+                date: '10/09/2023',
+                resId: 'NS12009'
             },
             {
                 baseFare: 115,
@@ -81,7 +82,8 @@ const main = async () => {
                 bags: 5,
                 gratuity: 30,
                 waiting: 0,
-                other: 0
+                date: '8/18/2023',
+                resId: 'NS12019'
             }
         ]
         await Run.insertMany(runs)
@@ -99,7 +101,7 @@ const main = async () => {
                 run_id: runs[1]._id, // Associate payment with the second run
                 totalAmount: 150,
                 reimbursements: 20
-            },
+            }
             
         ]
             await Payment.insertMany(payments)

@@ -7,7 +7,8 @@ const runSchema = new Schema({
     bags: { type: Number, required: true },
     gratuity: { type: Number, required: true },
     waiting: { type: Number, required: true },
-    other: { type: Number, required: true}
+    date: { type: String, required: true},
+    resId: { type: String, required: true}
 }, { timestamps: true }
 )
 
