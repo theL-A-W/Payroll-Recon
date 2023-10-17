@@ -190,3 +190,17 @@ body{
 #showRuns{
     color: white;
 }
+#block{
+    background-color: #EEDFCF;
+    color: #62482A;
+    height:fit-content;
+    padding: 2px;
+    border-radius: 5px;
+    display: inline;
+    justify-content: space-between;
+    margin: auto;
+    text-align: center;
+    justify-items: center;
+    border: 3px solid #62482A;
+
+}
