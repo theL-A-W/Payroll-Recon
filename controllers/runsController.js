@@ -49,7 +49,7 @@ const createRuns = async (req, res) => {
         await run.save()
         return res.status(201).json({
             run
-        });
+        })
     } catch (error) {
         return res.status(500).json({ error: error.message })
     }

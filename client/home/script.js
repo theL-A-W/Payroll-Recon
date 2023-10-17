@@ -1,4 +1,10 @@
 
+// //messaging in socket.io
+// import io from 'socket.io-client'
+// const socket = io("http://localhost:3001")
+
+
+
 
 
 const loginButton = document.querySelector('#login-btn')
@@ -23,3 +29,13 @@ allDrivers = await getAllDrivers()
 
 
 
+
+
+
+//messaging app socket.io
+const button = document.getElementById("sendBtn")
+const input = document.getElementById('messageInput')
+
+button.addEventListener("click", () => {
+    socket.emit("message", input.value)
+})

@@ -8,7 +8,7 @@ const gratuity = parseFloat(document.getElementById('gratuityInput').value)|| 0
 const waiting = parseFloat(document.getElementById('waitingInput').value) || 0
 const date = (document.getElementById('dateInput').value)
 const resId = (document.getElementById('res-id').value)
-const runTotalElement = document.getElementById('runTotal')
+
 
 
 
@@ -48,7 +48,7 @@ const runTotalElement = document.getElementById('runTotal')
         console.log('You Earned:', runPay, 'For Run:', resId)
         console.log("Store this data!")
 
-
+        const runTotalElement = document.getElementById('runTotal')
         const runTotal = document.createElement('p')
         console.log("created element")
         runTotal.id = `Run${allRuns.length + 1}`
@@ -59,6 +59,33 @@ const runTotalElement = document.getElementById('runTotal')
         <br><p id="category"> For Run:</p><p id="description"> ${resId}</p> </br>
         <br><p id="category"> On date:</p><p id="description"> ${date}</p></br></p>`
         console.log(runTotal.innerHTML)
+
+
+//add run# to run collection
+        fetch("http://localhost:3001/runs", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+                body: JSON.stringify(runPay)
+            })
+            .then((response) => response.json())
+            .then(data => {
+            console.log('Run created:', data)
+    
+        })
+        .catch(error => console.error('Error:', error))
+
+
+
+
+
+
+
+
+
+
+
         runTotalElement.appendChild(runTotal)
         bfInput.value = ""
         surchargeInput.value = ""
@@ -67,8 +94,6 @@ const runTotalElement = document.getElementById('runTotal')
         waitingInput.value = ""
         document.getElementById('res-id').value = ""
         dateInput.value = ""
-
-
 
 
              //function to add item to the database goes here
