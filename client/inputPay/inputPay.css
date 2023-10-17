@@ -170,6 +170,7 @@ body{
     margin-top: 4px;
     width: 66.5%;
     padding: 4px;
+    color: #62482A;
 
 }
 #edit, #delete{
@@ -185,4 +186,7 @@ body{
 }
 #delete{
     margin-left: 1em;
+}
+#showRuns{
+    color: white;
 }

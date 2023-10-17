@@ -27,10 +27,23 @@ app.use(bodyParser.json())
 //This is for socket.io  and throws error
 // const io = new Server(server, options)
 
-app.get('/', (req, res) => res.send('This is the homepage!'))
+app.get('/', (req, res) => {
+    res.json('This is the homepage!')
+})
 app.get('/drivers', driversController.getAllDrivers)
 app.get('/runs', runsController.getAllRuns)
 app.get('/payments', paymentsController.getAllPayments)
+
+// app.post('/drivers', driversController.createDrivers)
+// app.put('/drivers/:id', driversController.updateDrivers)
+// app.delete('/drivers/:id', driversController.deleteDrivers)
+
+app.post('/runs', runsController.createRuns)
+app.put('/runs/:id', runsController.updateRuns)
+app.delete('/runs/:id', runsController.deleteRuns)
+
+
+
 
 app.listen(PORT, () => console.log(`Express server listening on port ${PORT}`))
 
