@@ -193,14 +193,26 @@ body{
 #block{
     background-color: #EEDFCF;
     color: #62482A;
-    height:fit-content;
-    padding: 2px;
+    padding: 10px;
     border-radius: 5px;
     display: inline;
+    padding-left: 2em;
+    padding-right: 2em;
     justify-content: space-between;
-    margin: auto;
+    margin: 4px;
     text-align: center;
     justify-items: center;
     border: 3px solid #62482A;
-
+    display: float;
+    position: relative;
+    top: 2em;
+}
+#runDiv{
+    background-color: #C3AE97;
+    border: transparent;
+    border-radius: 5px;
+    margin-top: 4px;
+    width: 66.5%;
+    padding: 2px;
+    color: #62482A;
 }

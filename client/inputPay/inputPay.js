@@ -115,10 +115,70 @@ const resId = (document.getElementById('res-id').value)
 
 
 
+///////This is the working default with the correct categories///////
+
+
+// //Displays Runs
+// async function getRuns() {
+//     const response = await axios.get(`http://localhost:3001/runs`)
+//     return response.data
+// }
+
+// async function displayRuns() {
+
+//     allRuns = await getRuns()
+//     console.log(allRuns)
+//     const displayContainer = document.getElementById('recentSubmits')
+//     const showRun = document.getElementById('showRun')
+   
+//     // displayContainer.innerHTML = ""
+
+    
+
+ 
+//     allRuns.forEach(run => {
+//         console.log(run)
+//         const baseFare = run.baseFare
+//         const surcharge = run.surcharge
+//         const bags = run.bags
+//         const gratuity = run.gratuity
+//         const waiting = run.waiting
+//         const date = run.date
+//         const resId = run.redId
+
+//         const runTotalElement = document.getElementById('runTotal')
+//         const runTotal = document.createElement('p')
+
+//         for(i=0;i < allRuns.length; i++){
+//             allRuns = [i+1]
+//         }
+//         runTotal.id = `Run${allRuns}`
+//         console.log(runTotal.id)
+
+//         let runPay  = (baseFare * 0.25) + surcharge + (bags * 0.25) + gratuity + (waiting * 0.25)
+//         console.log('You Earned:', runPay, 'For Run:', resId)
+//         console.log("Store this data!")
+
+   
+//       const runs = document.createElement('div')
+     
+//         let runDiv =document.getElementById('showRun1')
+       
+//         runDiv.innerHTML =  
+//         `<p id="block">${runTotal.id}</p><p id="block">Run ID: ${run.resId}</p><p id="block"> Pay: ${runPay}</p><p id="block"> Date: ${run.date}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
+//         for (i=0; i < allRuns.length; i++){
+//             console.log(allRuns)
+//         }
+//     })
+// }
+
+// displayRuns()
+
 
 
 
 //Displays Runs
+
 async function getRuns() {
     const response = await axios.get(`http://localhost:3001/runs`)
     return response.data
@@ -135,7 +195,7 @@ async function displayRuns() {
 
     
 
- 
+   
     allRuns.forEach(run => {
         console.log(run)
         const baseFare = run.baseFare
@@ -157,22 +217,22 @@ async function displayRuns() {
 
         let runPay  = (baseFare * 0.25) + surcharge + (bags * 0.25) + gratuity + (waiting * 0.25)
         console.log('You Earned:', runPay, 'For Run:', resId)
-        console.log("Store this data!")
 
    
-      const runs = document.createElement('div')
-     
-        let runDiv =document.getElementById('showRun1')
-       
+      const runDiv = document.createElement('div')
+      runDiv.id = 'runDiv'
+     displayContainer.appendChild(runDiv)
+        // let runDiv = document.getElementById('showRun1')
+  
         runDiv.innerHTML =  
-        `<p id="block">${runTotal.id}</p><p id="block">Run ID: ${run.resId}</p><p id="block"> Pay: ${runPay}</p><p id="block"> Date: ${run.date}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
-        for (i=0; i < allRuns.length; i++){
-            console.log(allRuns)
-        }
+        `<p id="block">${runTotal.id}</p><p id="block">Run ID: ${run.resId}</p><p id="block"> Pay: $${runPay}</p><p id="block"> Date: ${run.date}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
+
     })
 }
 
 displayRuns()
+
+
 
 
 

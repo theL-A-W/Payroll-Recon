@@ -15,14 +15,14 @@ const main = async () => {
             },
             {
                 name: 'Gina Walker',
-                availability: 'part-time',
+                availability: 'full-time',
                 emp_email: 'gina@bedriven.com',
                 emp_pass: 'Password123',
                 has7D: true,
                 hasDOT: true
             },
             {
-                name: 'Random Employee1',
+                name: 'John Johnson',
                 availability: 'part-time',
                 emp_email: 'employee1@bedriven.com',
                 emp_pass: 'Password',
@@ -30,23 +30,23 @@ const main = async () => {
                 hasDOT: true
             },
             {
-                name: 'Random Employee2',
-                availability: 'part-time',
+                name: 'Albert Smith',
+                availability: 'full-time',
                 emp_email: 'employee2@bedriven.com',
                 emp_pass: 'Password',
                 has7D: true,
                 hasDOT: true
             },
             {
-                name: 'Random Employee3',
-                availability: 'part-time',
+                name: 'Kim Brown',
+                availability: 'full-time',
                 emp_email: 'employee3@bedriven.com',
                 emp_pass: 'Password',
                 has7D: true,
                 hasDOT: true
             },
             {
-                name: 'Random Employee4',
+                name: 'Micheal Jones',
                 availability: 'part-time',
                 emp_email: 'employee4@bedriven.com',
                 emp_pass: 'Password',
@@ -54,8 +54,16 @@ const main = async () => {
                 hasDOT: true
             },
             {
-                name: 'Random Employee5',
-                availability: 'part-time',
+                name: 'Frank Miller',
+                availability: 'full-time',
+                emp_email: 'employee5@bedriven.com',
+                emp_pass: 'Password',
+                has7D: true,
+                hasDOT: true
+            },
+            {
+                name: 'Paula Anderson',
+                availability: 'full-time',
                 emp_email: 'employee5@bedriven.com',
                 emp_pass: 'Password',
                 has7D: true,
@@ -84,22 +92,41 @@ const main = async () => {
                 waiting: 0,
                 date: '8/18/2023',
                 resId: 'NS12019'
+            },
+            {
+                baseFare: 388,
+                surcharge: 20,
+                bags: 0,
+                gratuity: 100,
+                waiting: 5,
+                date: '1/8/2021',
+                resId: 'NS12019'
+            },
+            {
+                baseFare: 90,
+                surcharge: 0,
+                bags: 0,
+                gratuity: 20,
+                waiting: 0,
+                date: '4/5/2022',
+                resId: 'NS12019'
             }
+
         ]
         await Run.insertMany(runs)
         console.log("Created some runs")
 
         const payments = [
             {
-                emp_id: drivers[0]._id, // Associate payment with the first driver
-                run_id: runs[0]._id, // Associate payment with the first run
-                totalAmount: 220,
+                emp_name: 'Lindsay Walker',
+                week_ending: '05/24/2023',
+                totalAmount: 1220,
                 reimbursements: 0
             },
             {
-                emp_id: drivers[1]._id, // Associate payment with the second driver
-                run_id: runs[1]._id, // Associate payment with the second run
-                totalAmount: 150,
+                emp_name: 'Paula Anderson',
+                week_ending: '03/02/2022',
+                totalAmount: 1150,
                 reimbursements: 20
             }
             

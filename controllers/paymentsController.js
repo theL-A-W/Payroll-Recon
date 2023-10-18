@@ -2,7 +2,7 @@ const { Payment } = require('../models')
 
 const getAllPayments = async (req, res) => {
     try {
-        const payments = await Payment.find().populate('emp_id run_id')
+        const payments = await Payment.find().populate('emp_name week_ending')
         return res.json(payments)
     } catch (error) {
         return res.status(500).send(error.message)
@@ -12,7 +12,7 @@ const getAllPayments = async (req, res) => {
 const getOnePayment = async (req, res) => {
     try {
         const id = req.params.id
-        const payment = await Payment.findById(id).populate('emp_id run_id')
+        const payment = await Payment.findById(id).populate('emp_name week_ending')
         if (payment) {
             return res.json(payment)
         }
