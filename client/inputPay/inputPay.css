@@ -207,7 +207,7 @@ body{
     position: relative;
     top: 2em;
 }
-#runDiv{
+#runDiv, #newRunDiv{
     background-color: #C3AE97;
     border: transparent;
     border-radius: 5px;
@@ -216,3 +216,4 @@ body{
     padding: 2px;
     color: #62482A;
 }
+
