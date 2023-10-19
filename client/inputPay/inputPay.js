@@ -12,21 +12,6 @@ const resId = (document.getElementById('res-id').value)
 
 
 
-//POSTING RUNS
-const localHost = 'http://localhost:3001/'
-const addNewRun = async () => { await axios.post(`${localHost}runs`, { baseFare: baseFare, surcharge: surcharge, bags: bags, gratuity: gratuity, waiting: waiting, date:date, resId: resId })
-const displayContainer = document.getElementById('recentSubmits')
-    let newRun = document.createElement('div')
-    newRun.id = 'newRunDiv'
-    newRun.innerHTML = `<p id="block">${run.id}</p><p id="block">Run ID: ${run.resId}</p><p id="block"> Pay: $${runPay}</p><p id="block"> Date: ${run.date}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
-    displayContainer.appendChild(newRun)
-    
-    console.log(addNewRun)
-}
-addNewRun()
-
-
-
 
 
 
@@ -84,6 +69,20 @@ addNewRun()
 
 
 
+        //POSTING RUNS
+const localHost = 'http://localhost:3001/'
+const addNewRun = async () => { await axios.post(`${localHost}runs`, { baseFare: baseFare, surcharge: surcharge, bags: bags, gratuity: gratuity, waiting: waiting, date:date, resId: resId })
+const displayContainer = document.getElementById('recentSubmits')
+    let newRun = document.createElement('div')
+    newRun.id = 'newRunDiv'
+    newRun.innerHTML = `<p id="block">${runTotal.id}</p><p id="block">Run ID: ${resId}</p><p id="block"> Pay: $${runPay}</p><p id="block"> Date: ${date}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
+    displayContainer.appendChild(newRun)
+    
+    console.log(addNewRun)
+}
+addNewRun()
+
+
 
 
         runTotalElement.appendChild(runTotal)
@@ -103,6 +102,10 @@ yes()
 })
 
 
+
+
+
+
 //Start of diaplaying runs, with lots of redundant data
 const baseFare = parseFloat(document.getElementById('bfInput').value) || 0
 const surcharge = parseFloat(document.getElementById('surchargeInput').value) || 0
@@ -111,6 +114,9 @@ const gratuity = parseFloat(document.getElementById('gratuityInput').value)|| 0
 const waiting = parseFloat(document.getElementById('waitingInput').value) || 0
 const date = (document.getElementById('dateInput').value)
 const resId = (document.getElementById('res-id').value)
+
+
+
 
 
 
@@ -147,9 +153,16 @@ async function displayRuns() {
         const runTotal = document.createElement('p')
 
         for(i=0;i < allRuns.length; i++){
-            allRuns = [i+1]
+            runTotal.id = `Run${allRuns.length }`
+            
         }
-        runTotal.id = `Run${allRuns}`
+     
+        // allRuns.forEach(function(run, index) {
+        //     runTotal.id({[run]: index + 1})
+
+        // })
+       
+        // runTotal.id = `Run${allRuns}`
         console.log(runTotal.id)
 
         let runPay  = (baseFare * 0.25) + surcharge + (bags * 0.25) + gratuity + (waiting * 0.25)

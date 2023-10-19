@@ -76,16 +76,23 @@ body{
     padding: 4px;
 }
 #pastTotals{
-    height: 7em;
-    width: 7em;
+    height: 15em;
+    width:15em;
     background-color: #C3AE97;;
     border-radius: 50%;
     text-align: center;
     border: 5px solid #79634B;
-    position: relative;
-    float: right;
-    right: 3%;
-    bottom: 10.15em;
-    padding: 2%;
     word-wrap: normal;
+}
+
+#value{
+    text-decoration: underline;
+}
+#pastWeek{
+    padding: 1em;
+    background-color: #EEDFCF;
+    margin-top: 1em;
+    border: 4px solid #79634B;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px #79634B;
 }

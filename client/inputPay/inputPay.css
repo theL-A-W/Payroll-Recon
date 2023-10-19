@@ -157,19 +157,22 @@ body{
 .recentSubmits{
     padding: 1em;
     background-color: #EEDFCF;
-    margin-top: 1em;
+    /* margin-top: 1em; */
     border: 4px solid #79634B;
     border-radius: 5px;
     box-shadow: 4px 4px 10px #79634B;
     color: #62482A;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 97%
 }
-.runs{
+#runDiv, #newRunDiv{
     background-color: #C3AE97;
     border: transparent;
     border-radius: 5px;
     margin-top: 4px;
-    width: 66.5%;
-    padding: 4px;
+    width: 80%;
+    padding: 2px;
     color: #62482A;
 
 }
@@ -179,8 +182,7 @@ body{
     margin: 2px;
     border-radius: 5px;
     padding: .3em;
-    margin-left: 49em;
-
+    margin-left: 60em;
     height: 3em;
     width: 3em;
 }
@@ -207,13 +209,70 @@ body{
     position: relative;
     top: 2em;
 }
-#runDiv, #newRunDiv{
-    background-color: #C3AE97;
-    border: transparent;
-    border-radius: 5px;
-    margin-top: 4px;
-    width: 66.5%;
-    padding: 2px;
-    color: #62482A;
-}
 
+@media (max-width: 1024px){
+    #run-total{
+        height: 18em;
+        width: 18em;
+        font-size: 15px;
+        float: right;
+        right: -15px;
+        bottom: 21.5em;
+    }
+    #runDiv, #newRunDiv{
+        width: 100%;
+    }
+}
+@media (max-width: 860px){
+    #run-total{
+        height: 20em;
+        width: 15em;
+        font-size: 15px;
+        float: right;
+        right: -15px;
+        bottom: 22.5em;
+        border-radius: 0%;
+        padding-bottom: 20px;
+    }
+    #runDiv, #newRunDiv{
+        width: 100%;
+    }
+    .pay{
+        background-color: #C3AE97;
+        border: transparent;
+        border-radius: 5px;
+        margin-top: 4px;
+        width: 50%;
+        word-spacing: 34em;
+        padding: 4px;
+    }
+}
+@media (max-width: 600px){
+    #run-total{
+        height: 29em;
+        width: 12em;
+        font-size: 12px;
+        bottom: 30em;
+    }
+    #block{
+        padding: 4px;
+        font-size: 18px;
+
+    }
+    .pay{
+        background-color: #C3AE97;
+        border: transparent;
+        border-radius: 5px;
+        margin-top: 4px;
+        width: 50%;
+        word-spacing: 34em;
+        padding: 4px;
+    }
+    .recentSubmits{
+        display: flex;
+        flex-wrap: wrap;
+        justify-items:left;
+        margin-left: -2.25%;
+    }
+
+}

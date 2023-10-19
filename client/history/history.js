@@ -1,7 +1,5 @@
 //Date function -- made with the help of chatGPT
-//Past Pay dates
-
-// Change this to the number of dates you want to calculate
+//PAST PAY DATES
 const startDate = new Date('10/14/2023')
 const initialDate = new Date('10/21/2023')
 const numberOfDates = 10
@@ -25,7 +23,7 @@ function calculatePastDates(startDate, numberOfDates) {
 const pastPayDays = calculatePastDates(startDate, numberOfDates);
 console.log('Past paydays:', pastPayDays);
 
-//Next Pay Dates
+//NEXT PAY DAYS
 function calculateNextDates(initialDate, numOfDates) {
       const nextDates = []
      
@@ -44,59 +42,84 @@ function calculateNextDates(initialDate, numOfDates) {
 const nextPayDays = calculateNextDates(initialDate, numOfDates);
 console.log('Next paydays:', nextPayDays);
 
+
+
 //THIS IS A WORK IN PROGRESS---FUNCTION FOR CREATING WEEKLY PAY DUE
 // if (date === '10/14/2023'|| '10/13/2023'|| '10/12/2023'|| '10/11/2023'|| '10/10/2023'|| '10/09/2023'|| '10/08/2023'){
 //     console.log('this is a pay week')
 // //pull data to add dayPay for all  of  these days
 // } else
 
-
-
-
-
-
-async function getPayments() {
-    const response = await axios.get(`http://localhost:3001/payments`)
-    return response.data
+//GET RUNS
+async function getRuns() {
+  const response = await axios.get(`http://localhost:3001/runs`)
+  return response.data
 }
+//GET PAYMENTS
+async function getPayments() {
+  const response = await axios.get(`http://localhost:3001/payments`)
+  return response.data
+}
+//RETURN ALL RUNS AND PAYMENTS
+async function yesRunsPayments() {
 
-async function displayPayments() {
+  const allRuns = await getRuns()
+  console.log('All Runs', allRuns)
 
-    allPayments = await getPayments()
-    console.log(allPayments)
-    const displayContainer = document.getElementById('recentSubmits')
-    const pastTotals = document.getElementById('pastTotals')
-   
-   
-    allPayments.forEach(payment => {
-        console.log(payment)
+  const allPayments = await getPayments()
+  console.log('All Payments', allPayments)
 
-//Need to  import data to calculate "payment", or store data in created in another file and call it here
+  allPayments.forEach(payment => {
+        let mainBox = document.getElementById('mainBox')
+        let pastWeek = document.createElement('div')
+        pastWeek.id = ('pastWeek')
+        mainBox.appendChild(pastWeek)
+        let pastTotals = document.createElement('div')
+        pastTotals.id = 'pastTotals'
+        pastWeek.appendChild(pastTotals)
+        pastTotals.innerHTML = `
+        <p id="block"><br id="value">Name:</br>${payment.emp_name}</p>
+        <p id="block"> <br id="value">Earned:</br>$${payment.totalAmount}</p>
+        <p id="block"> <br id="value"> On date:</br>${payment.week_ending}</p>`
+     
+  
 
+  })
+
+
+//CREATE TOTAL AMOUNTS FOR PAYMENTS FROM RUNS DATA
+// for(i=0; i < allRuns.length; i++){
+// if (allRuns.date = pastDates || nextDates){
+//   console.log('subtract 7 days and add totals')
+// } else {
+//   console.log('there is nobody to pay this week')
+// }
+// }
+
+}
+yesRunsPayments()
+
+
+
+
+
+
+
+  //   //GET PAYMENTS
+  // async function paymentsDisplayed{
+  //     const localHost = 'http://localhost:3001/'
+  //     // const displayPayments = async () => {
+  //       await axios.get(`${localHost}payments`, { emp_name: payments.emp_name.value, week_ending: payments.week_ending.value, totalAmount: payments.totalAmount.value, reimbursements: payments.reimbursements.value })
+  //       let pastWeek = document.getElementById('pastWeek')
+  //       let pay = document.createElement('div')
+  //       pay.innerHTML = `
+  //       <p id="block">${sunday}</p>
+  //       <p id="block">Earned: $${monday}</p>
+  //       <p id="block"> On date: ${tuesday}</p>`
+  //       pastWeek.appendChild(pay)
+  // }
+  //   // }
 
   
-        // const sunday = 
-        // const monday = 
-        // const tuesday = 
-        // const wednesday = 
-        // const thursday = 
-        // const friday =  
-        // const saturday = 
-
-//Calculation of payments
-        // let weeklyPayments  = sunday + monday + tuesday + wednesday  + thurdsay + friday + saturday
-        // console.log('You Earned:', runPay, 'For Run:', resId)
-
-//Creating divs for payment array to dislay them
-      const payDiv = document.createElement('div')
-      payDiv.id = 'payDiv'
-     displayContainer.appendChild(payDiv)
-
-    
-        payDiv.innerHTML =  
-        `<p id="block">${payment.name}</p><p id="block">Earned: $${payment.total}</p><p id="block"> On date: ${payment.week_ending}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
-
-    })
-}
-
-displayPayments()
+  
+  // getPayments()

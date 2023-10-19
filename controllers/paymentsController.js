@@ -48,13 +48,25 @@ const createPayments = async (req, res) => {
             return res.status(500).send(error.message);
         }
     }
-    
+    const deletePayments = async (req, res) => {
+        try {
+            const { id } = req.params;
+            const deleted = await Payment.findByIdAndDelete(id)
+            if (deleted) {
+                return res.status(200).send("Payment deleted");
+            }
+            throw new Error("Run not found");
+        } catch (error) {
+            return res.status(500).send(error.message);
+        }
+    }
 
 
 module.exports = {
     getAllPayments,
     getOnePayment,
     createPayments,
-    updatePayments
+    updatePayments,
+    deletePayments
    
 }
