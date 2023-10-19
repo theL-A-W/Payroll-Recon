@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Schema  = mongoose.Schema
 
 const runSchema = new Schema({
+    emp_name: { type: String, required: true },
     baseFare: { type: Number, required: true },
     surcharge: { type: Number, required: true },
     bags: { type: Number, required: true },

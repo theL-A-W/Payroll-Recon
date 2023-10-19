@@ -110,7 +110,7 @@ body{
     background-color: #C3AE97;
     border-radius: 50%;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 12px;
     text-align: center;
     border: 5px solid #79634B;
     color: #62482A;
@@ -120,7 +120,7 @@ body{
     bottom: 18.35em;
     padding: 2%;
     word-wrap: normal;
-    line-height: 22px;
+    line-height: 18px;
 }
 .allText{
     display: grid;
@@ -142,9 +142,7 @@ body{
 #description{
     margin:0;
     font-size: 22px;
-
     font-weight: 500;
-
 }
 #submit-btn{
     background-color: #C3AE97;
@@ -157,14 +155,13 @@ body{
 .recentSubmits{
     padding: 1em;
     background-color: #EEDFCF;
-    /* margin-top: 1em; */
     border: 4px solid #79634B;
     border-radius: 5px;
     box-shadow: 4px 4px 10px #79634B;
     color: #62482A;
     display: flex;
     flex-direction: column-reverse;
-    width: 97%
+    width: 95%;
 }
 #runDiv, #newRunDiv{
     background-color: #C3AE97;
@@ -182,7 +179,7 @@ body{
     margin: 2px;
     border-radius: 5px;
     padding: .3em;
-    margin-left: 60em;
+    float: inline-end;
     height: 3em;
     width: 3em;
 }
@@ -205,9 +202,8 @@ body{
     text-align: center;
     justify-items: center;
     border: 3px solid #62482A;
-    display: float;
-    position: relative;
-    top: 2em;
+    float: inline-start;
+    top: 0em;
 }
 
 @media (max-width: 1024px){
@@ -228,15 +224,12 @@ body{
         height: 20em;
         width: 15em;
         font-size: 15px;
-        float: right;
-        right: -15px;
         bottom: 22.5em;
         border-radius: 0%;
         padding-bottom: 20px;
+        float: inline-end
     }
-    #runDiv, #newRunDiv{
-        width: 100%;
-    }
+
     .pay{
         background-color: #C3AE97;
         border: transparent;
@@ -245,18 +238,32 @@ body{
         width: 50%;
         word-spacing: 34em;
         padding: 4px;
+
+    }
+
+    #block{
+        float: inline-start;
+        top: 0px;
     }
 }
 @media (max-width: 600px){
     #run-total{
-        height: 29em;
+        height: 20em;
         width: 12em;
         font-size: 12px;
-        bottom: 30em;
+        bottom: 20em;
     }
+    .pay{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
     #block{
-        padding: 4px;
-        font-size: 18px;
+        font-size: 15px;
+      
 
     }
     .pay{
@@ -273,6 +280,11 @@ body{
         flex-wrap: wrap;
         justify-items:left;
         margin-left: -2.25%;
+    }
+    #edit, #delete{
+        margin-left:0px;
+        float: inline-end;
+        
     }
 
 }

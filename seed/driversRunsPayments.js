@@ -6,7 +6,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
         const drivers = [
             {
-                name: 'Lindsay Walker',
+                emp_name: 'Lindsay Walker',
                 availability: 'part-time',
                 emp_email: 'lindsay@bedriven.com',
                 emp_pass: 'Password',
@@ -14,7 +14,7 @@ const main = async () => {
                 hasDOT: false
             },
             {
-                name: 'Gina Walker',
+                emp_name: 'Gina Walker',
                 availability: 'full-time',
                 emp_email: 'gina@bedriven.com',
                 emp_pass: 'Password123',
@@ -22,7 +22,7 @@ const main = async () => {
                 hasDOT: true
             },
             {
-                name: 'John Johnson',
+                emp_name: 'John Johnson',
                 availability: 'part-time',
                 emp_email: 'employee1@bedriven.com',
                 emp_pass: 'Password',
@@ -30,7 +30,7 @@ const main = async () => {
                 hasDOT: true
             },
             {
-                name: 'Albert Smith',
+                emp_name: 'Albert Smith',
                 availability: 'full-time',
                 emp_email: 'employee2@bedriven.com',
                 emp_pass: 'Password',
@@ -38,7 +38,7 @@ const main = async () => {
                 hasDOT: true
             },
             {
-                name: 'Kim Brown',
+                emp_name: 'Kim Brown',
                 availability: 'full-time',
                 emp_email: 'employee3@bedriven.com',
                 emp_pass: 'Password',
@@ -46,7 +46,7 @@ const main = async () => {
                 hasDOT: true
             },
             {
-                name: 'Micheal Jones',
+                emp_name: 'Micheal Jones',
                 availability: 'part-time',
                 emp_email: 'employee4@bedriven.com',
                 emp_pass: 'Password',
@@ -54,7 +54,7 @@ const main = async () => {
                 hasDOT: true
             },
             {
-                name: 'Frank Miller',
+                emp_name: 'Frank Miller',
                 availability: 'full-time',
                 emp_email: 'employee5@bedriven.com',
                 emp_pass: 'Password',
@@ -62,7 +62,7 @@ const main = async () => {
                 hasDOT: true
             },
             {
-                name: 'Paula Anderson',
+                emp_name: 'Paula Anderson',
                 availability: 'full-time',
                 emp_email: 'employee5@bedriven.com',
                 emp_pass: 'Password',
@@ -76,6 +76,7 @@ const main = async () => {
 
         const runs = [
             {
+                emp_name: 'Paula Anderson',
                 baseFare: 150,
                 surcharge: 20,
                 bags: 10,
@@ -85,6 +86,7 @@ const main = async () => {
                 resId: 'NS12009'
             },
             {
+                emp_name: 'Gina Walker',
                 baseFare: 115,
                 surcharge: 0,
                 bags: 5,
@@ -94,6 +96,7 @@ const main = async () => {
                 resId: 'NS12019'
             },
             {
+                emp_name: 'Lindsay Walker',
                 baseFare: 388,
                 surcharge: 20,
                 bags: 0,
@@ -103,6 +106,7 @@ const main = async () => {
                 resId: 'NS12019'
             },
             {
+                emp_name: 'Lindsay Walker',
                 baseFare: 90,
                 surcharge: 0,
                 bags: 0,

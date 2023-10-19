@@ -2,6 +2,7 @@
 const submitBtn = document.getElementById('submit-btn')
 
 submitBtn.addEventListener("click", () => {
+const emp_name = document.getElementById('emp-name-input').value
 const baseFare = parseFloat(document.getElementById('bfInput').value) || 0
 const surcharge = parseFloat(document.getElementById('surchargeInput').value) || 0
 const bags = parseFloat(document.getElementById('bagsInput').value) || 0
@@ -57,10 +58,10 @@ const resId = (document.getElementById('res-id').value)
         const runTotalElement = document.getElementById('runTotal')
         const runTotal = document.createElement('p')
         console.log("created element")
-        runTotal.id = `Run${allRuns.length + 1}`
-        console.log(runTotal.id)
+        // runTotal.id = `Run${allRuns.length + 1}`
+        // console.log(runTotal.id)
         runTotal.innerHTML = 
-        `<p class="allText" ><p id="runNumber" >${runTotal.id}</p> 
+        `<p class="allText" ><p id="runNumber" >${emp_name}</p> 
         <br><p id="category"> You earned:</p><p id="description">$ ${runPay}</p></br>
         <br><p id="category"> For Run:</p><p id="description"> ${resId}</p> </br>
         <br><p id="category"> On date:</p><p id="description"> ${date}</p></br></p>`
@@ -71,11 +72,11 @@ const resId = (document.getElementById('res-id').value)
 
         //POSTING RUNS
 const localHost = 'http://localhost:3001/'
-const addNewRun = async () => { await axios.post(`${localHost}runs`, { baseFare: baseFare, surcharge: surcharge, bags: bags, gratuity: gratuity, waiting: waiting, date:date, resId: resId })
+const addNewRun = async () => { await axios.post(`${localHost}runs`, { emp_name: emp_name, baseFare: baseFare, surcharge: surcharge, bags: bags, gratuity: gratuity, waiting: waiting, date:date, resId: resId })
 const displayContainer = document.getElementById('recentSubmits')
     let newRun = document.createElement('div')
     newRun.id = 'newRunDiv'
-    newRun.innerHTML = `<p id="block">${runTotal.id}</p><p id="block">Run ID: ${resId}</p><p id="block"> Pay: $${runPay}</p><p id="block"> Date: ${date}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
+    newRun.innerHTML = `<p id="block">${emp_name}</p><p id="block">Run ID: ${resId}</p><p id="block"> Pay: $${runPay}</p><p id="block"> Date: ${date}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
     displayContainer.appendChild(newRun)
     
     console.log(addNewRun)
@@ -107,6 +108,7 @@ yes()
 
 
 //Start of diaplaying runs, with lots of redundant data
+const emp_name = parseFloat(document.getElementById('emp-name-input').value)
 const baseFare = parseFloat(document.getElementById('bfInput').value) || 0
 const surcharge = parseFloat(document.getElementById('surchargeInput').value) || 0
 const bags = parseFloat(document.getElementById('bagsInput').value) || 0
@@ -141,6 +143,7 @@ async function displayRuns() {
    
     allRuns.forEach(run => {
         console.log(run)
+        const emp_name = run.emp_name
         const baseFare = run.baseFare
         const surcharge = run.surcharge
         const bags = run.bags
@@ -152,18 +155,6 @@ async function displayRuns() {
         const runTotalElement = document.getElementById('runTotal')
         const runTotal = document.createElement('p')
 
-        for(i=0;i < allRuns.length; i++){
-            runTotal.id = `Run${allRuns.length }`
-            
-        }
-     
-        // allRuns.forEach(function(run, index) {
-        //     runTotal.id({[run]: index + 1})
-
-        // })
-       
-        // runTotal.id = `Run${allRuns}`
-        console.log(runTotal.id)
 
         let runPay  = (baseFare * 0.25) + surcharge + (bags * 0.25) + gratuity + (waiting * 0.25)
         console.log('You Earned:', runPay, 'For Run:', resId)
@@ -175,7 +166,7 @@ async function displayRuns() {
         // let runDiv = document.getElementById('showRun1')
   
         runDiv.innerHTML =  
-        `<p id="block">${runTotal.id}</p><p id="block">Run ID: ${run.resId}</p><p id="block"> Pay: $${runPay}</p><p id="block"> Date: ${run.date}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
+        `<p id="block">${run.emp_name}</p><p id="block">Run ID: ${run.resId}</p><p id="block"> Pay: $${runPay}</p><p id="block"> Date: ${run.date}</p><button id="edit"><i class="fa-regular fa-pen-to-square"  style="color: #e5cfa9;"></i></button><button id="delete"><i class="fa-solid fa-trash-can" style="color: #e5cfa9;"></i></button></p>`
 
     })
 }

@@ -86,6 +86,25 @@ async function yesRunsPayments() {
 
   })
 
+forEach(driver => {
+  //find all dates 7 days prior
+  //if date is 1 day prior to W/E, it is a friday, if it is 2 days prior on the numerical calendar, it is a thursday, etc.
+  //add all runTotals that are 7 days prior to the Week-Ending date
+//display total for each day
+//if day has no total, default pay to zero for that day
+  //post runTotal and driver name to "payments"
+})
+
+
+//filter by driver
+
+
+
+
+
+
+
+
 
 //CREATE TOTAL AMOUNTS FOR PAYMENTS FROM RUNS DATA
 // for(i=0; i < allRuns.length; i++){
