@@ -96,3 +96,6 @@ body{
     border-radius: 5px;
     box-shadow: 4px 4px 10px #79634B;
 }
+#payByRun{
+    display: inline-flex;
+}
