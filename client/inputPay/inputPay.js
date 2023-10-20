@@ -87,6 +87,7 @@ addNewRun()
 
 
         runTotalElement.appendChild(runTotal)
+        document.getElementById('emp-name-input').value = ""
         bfInput.value = ""
         surchargeInput.value = ""
         bagsInput.value = ""

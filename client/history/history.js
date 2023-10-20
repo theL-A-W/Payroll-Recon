@@ -41,11 +41,6 @@ console.log('Next paydays:', nextPayDays)
 
 
 
-//THIS IS A WORK IN PROGRESS---FUNCTION FOR CREATING WEEKLY PAY DUE
-// if (date === '10/14/2023'|| '10/13/2023'|| '10/12/2023'|| '10/11/2023'|| '10/10/2023'|| '10/09/2023'|| '10/08/2023'){
-//     console.log('this is a pay week')
-// //pull data to add dayPay for all  of  these days
-// } else
 
 //GET RUNS
 async function getRuns() {
@@ -93,7 +88,7 @@ async function yesRunsPayments() {
   })
  
 
-//   //CREATE A PAY PERIOD AND ASSIGN EACH RUN TO A PAY PERIOD
+//CREATE A PAY PERIOD + ASSIGN EACH RUN TO PAY PERIOD
 const payPeriods = []
 for (let i = 0; i < pastPayDays.length; i++) {
   const payWeekEnd = new Date(pastPayDays[i])
@@ -112,6 +107,7 @@ const runsByPayPeriod = {}
 
 allRuns.forEach(run => {
   const runDate = new Date(run.date)
+
   let assignedToPayPeriod = false
 
   for (let i = 0; i < payPeriods.length; i++) {
@@ -127,7 +123,8 @@ allRuns.forEach(run => {
       runsByPayPeriod[payPeriodKey].push(run)
 
 
-enterBtn.addEventListener("click", () => {
+//SEARCH BY NAME
+// enterBtn.addEventListener("click", () => {
         
         const emp_name = run.emp_name
         const baseFare = run.baseFare
@@ -140,8 +137,12 @@ enterBtn.addEventListener("click", () => {
         const nameInput = document.getElementById('nameInput').value
         const enterBtn = document.getElementById('enterBtn')
     
-        if (nameInput == emp_name){
+    
+        // if (nameInput == emp_name){
+//CALCULATE RUN PAY
         let runPay  = (baseFare * 0.25) + surcharge + (bags * 0.25) + gratuity + (waiting * 0.25)
+
+//RUN DISPLAY
         let mainBox = document.getElementById('mainBox')
         let pastWeek = document.createElement('div')
         pastWeek.id = ('pastWeek')
@@ -154,35 +155,75 @@ enterBtn.addEventListener("click", () => {
         <p id="block"><br id="value">Run date:</br>${run.date}</p>
         <p id="block"> <br id="value">Was paid:</br>$${runPay}</p>
         <p id="block"> <br id="value"> On date:</br>${payPeriod.end}</p>`
-        // let payByWeek = document.createElement('div')
-        // payByWeek.id = 'payByWeek'
-        // pastWeek.appendChild(payByWeek)
-        // payByWeek.innerHTML = `
-        // <p id="block"><br id="value">Driver:</br>${run.emp_name}</p>
-        // <p id="block"> <br id="value">Was paid:</br>$${weekPay}</p>
-        // <p id="block"> <br id="value"> On date:</br>${payPeriod.end}</p>`
+
+//CALCULATE WEEK PAY
+function calculateDriverWeekPay(driver, runsByPayPeriod) {
+  const { emp_name } = driver
+  let totalWeekPay = 0
+
+  runsByPayPeriod.forEach((run) => {
+    if(run.emp_name === emp_name) {
+      totalWeekPay +=runPay
+    }
+  })
+  return totalWeekPay
+
+}
+
+
+const weekPayByDriver = {}
+
+for(const  payPeriodKey in runsByPayPeriod) {
+  const runsInPayPeriod =  runsByPayPeriod[payPeriodKey]
+
+  allDrivers.forEach((driver) => {
+    const weekPay = calculateDriverWeekPay(driver, runsInPayPeriod)
+
+
+    if(!weekPayByDriver[driver.emp_name]) {
+      weekPayByDriver[driver.emp_name] = 0
+      // console.log(weekPayByDriver)
+    }
+    weekPayByDriver[driver.emp_name] += weekPay
+    // console.log(weekPayByDriver)
+  })
+
+}
+console.log(weekPayByDriver)
+for (const driverName in weekPayByDriver) {
+console.log(driverName)
+  if(weekPayByDriver[driverName] === 0){
+    console.log('dont show innerHTML for this driver')
+  }else {
+    // console.log(weekPayByDriver)
+    // console.log(`driver: ${driverName}, Week Pay: $${weekPayByDriver[driverName]}`)
+//WEEKLY PAY DISPLAY
+        let payByWeek = document.createElement('div')
+        payByWeek.id = 'payByWeek'
+        pastWeek.appendChild(payByWeek)
+        payByWeek.innerHTML = `
+        <p id="block"><p id="value">Driver:</p>${run.emp_name}</p>
+        <p id="block"> <p id="value">Was paid:</p>$${weekPayByDriver[driverName]}</p>
+        <p id="block"> <p id="value"> Week-Ending:</p>${payPeriod.end}</p>`
+  }
+
+}
 
       } else {
-        console.log('This is not a driver')
+        // console.log('This is not a current driver')
+
       }
-    })
-     
-      // console.log(`run on date: ${run.date}, was paid on date ${payPeriod.end}`)
+    // })
       assignedToPayPeriod = true
       break
     }
-  }
+  // }
 
   if (!assignedToPayPeriod) {
-    console.log(`Run on ${run.date} is not within any pay period.`)
+    // console.log(`Run on ${run.date} is not within any pay period.`)
+
   }
 })
-
-
-console.log('Runs by Pay Period:', runsByPayPeriod)
-
-
-
 
 }
 yesRunsPayments()

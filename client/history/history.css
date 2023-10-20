@@ -97,5 +97,24 @@ body{
     box-shadow: 4px 4px 10px #79634B;
 }
 #payByRun{
+    background-color: #79634B;
+    border: 4px solid #62482A;
+    width: 100%;
     display: inline-flex;
+    justify-content: space-around;
+    color:#EEDFCF;
+    border-radius: 5px;
+
+}
+#value{
+   font-size: 20px;
+   margin: 0px
+}
+#payByWeek{
+    background-color: #C3AE97;
+    border: 4px solid #79634B;
+    margin: .5em;
+    width: 40%;
+    
+
 }
