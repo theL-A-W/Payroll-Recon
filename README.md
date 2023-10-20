@@ -7,7 +7,7 @@ This is a payroll reconcilliation app for a small ground transportation company.
 
 ## ERD
 ![View ERD](./images/Payroll-Project-ERD.png)
-
+![View HomePage](./images/Payroll-Application-Site.png)
 
 ## Technologies Used
 - HTML
@@ -20,9 +20,9 @@ This is a payroll reconcilliation app for a small ground transportation company.
 
 ## Stretch Goals
 - Messaging functionality upon login
-- Login Functionality
+- Login Functionality that transfers across pages
 - Log weekly pay history
-- Ability to search through history by week-ending date
+- Ability to search through history by week-ending date, and  by employee
 - Dispcrepancy page
 - Ability of users to upload images
 
