@@ -60,18 +60,25 @@ enter.addEventListener("click",  () => {
 
             allDrivers = await getDrivers()
 
-            const foundDriver = allDrivers.find(driver => driver.emp_email === username && driver.emp_pass === password)
+            // const foundDriver = allDrivers.find(driver => driver.emp_email === username && driver.emp_pass === password)
 
 
-        if (foundDriver){
-                console.log("you are in!")
-                hiddenLogin.style.display = "none"
-            }else {
-                alert("Username and or password are incorrect. Please try again")
+        // if (foundDriver){
+        //         console.log("you are in!")
+        //         hiddenLogin.style.display = "none"
+        //     }else {
+        //         alert("Username and or password are incorrect. Please try again")
+        //     }
+
+        enter.addEventListener("click", () => {
+            allDrivers.forEach((driver) =>{
+            if (username.value === driver.emp_name && password.value === driver.emp_pass) {
+                console.log('you are in')
+            }else{
+                console.log('try again')
             }
-
-
-
+        })
+    })
 
     yes()
     }
