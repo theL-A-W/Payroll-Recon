@@ -3,6 +3,10 @@
 // import io from 'socket.io-client'
 // const socket = io("http://localhost:3001")
 
+const sendBtn = document.getElementById('sendBtn')
+sendBtn.addEventListener("click",  () => { window.open(`mailto:lindsay@bedriven.com?subject=payroll%20Question&body=${messageInput.value}`)
+
+})
 
 
 
@@ -62,7 +66,7 @@ enter.addEventListener("click",  () => {
 
             // const foundDriver = allDrivers.find(driver => driver.emp_email === username && driver.emp_pass === password)
 
-
+ 
         // if (foundDriver){
         //         console.log("you are in!")
         //         hiddenLogin.style.display = "none"
