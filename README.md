@@ -6,7 +6,7 @@ This is a payroll reconcilliation app for a small ground transportation company.
 ![View wireframe](./images/Payroll-Project-Wireframe.png)
 
 ## ERD
-![View ERD](./images/Payroll-Project-ERD.png)
+![View ERD](./images/Payroll-ERD.png)
 
 ## Site Homepage
 ![View HomePage](./images/Payroll-Application-Site.png)
